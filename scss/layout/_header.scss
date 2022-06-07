@@ -1,0 +1,54 @@
+/** Header**/
+
+.header {
+    grid-area: header;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+
+    .cont-logotipo {
+        display: flex;
+        padding: 0%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.808);
+        position: fixed;
+        width: 100%;
+
+        & img {
+            height: 50px;
+            width: 50px;
+            display: flex;
+            border-radius: 10px;
+            
+        }
+
+        .titlehome {
+            
+            display: flex;
+            color: aliceblue;
+            font-family: "Lexend deca";
+            margin-right: 5%;
+            animation-name: titulogeneral;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+
+        @keyframes titulogeneral {
+            0% {
+                color: #00000091;
+            }
+
+            50% {
+                color: #66666681;
+            }
+
+            100% {
+                color: #e6e6e6;
+            }
+        }
+    }
+}

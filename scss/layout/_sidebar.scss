@@ -1,0 +1,38 @@
+.sidebar {
+    grid-area: sidebar;
+    background-color: #eeeeee;
+    padding: 0%;
+    display: flex;
+}
+
+
+.titulusomos {
+    font-family: "Lexend deca";
+}
+
+.textsomos {
+    font-family: "Lexend deca";
+    font-size: 14px;
+}
+
+.nuestrolocal {
+    font-size: 15px;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .nuestrolocalimg {
+        width: 250px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 2%;
+        .nuestroimg {
+            background-image: url("../img/nuestrolocal.JPG");
+            background-size: 100% 100%;
+            box-shadow: -1px 0px 5px 0px rgba(0, 0, 0, 0.26);
+        }
+    }
+}

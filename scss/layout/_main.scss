@@ -1,0 +1,350 @@
+.main {
+    grid-area: main;
+    background-color: #eeeeee;
+    padding: 0%;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-img {
+    background-image: url("../img/lentes1440.jpg");
+    @extend %bg-size1;
+}
+    .banner {
+        height: 130px;
+        width: 100%;
+    }
+
+    .bestseller {
+        font-family: "Lexend deca";
+        color: #272727;
+    }
+
+
+
+    .botones {
+
+        display: none;
+    }
+
+/**Catalogo**/
+
+.containercatalogo{
+    width: 80%;
+    margin: 5px auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .cardlentes1{
+        
+        margin: 2%;
+        background-color: white;
+        border: 1px solid #b6b1b16e;
+        width: 300px;
+        padding: 1%;
+        
+        img{
+            height: 200px;
+            width: 100%;
+            
+        }
+        
+        .contenidocard{
+            margin: 0 5px;
+            display:flex ;
+            flex-direction: column;
+            align-items: center;
+            
+            
+
+
+            h1{
+                font-size: 17px;
+                
+                margin-top: 0;
+            }
+            
+
+            p{
+                font-size: 15px;
+                color: #666;
+            }
+            del{
+                color: #666;
+            }
+
+            .textcardcatalogo{
+                width: 200px;
+                height: 30px;
+                background-color: cadetblue;
+                text-align: center;
+                color: white;
+                padding: 0 5px;
+                border-radius: 8px 8px 8px 8px;
+                line-height: 2;
+                font-size: 15px;
+                justify-content: center;
+                display: flex;
+                text-decoration: none;
+                
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+.hrcontenedor {
+    border: none;
+    height: 1px;
+    background-color: #9999997c;
+    width: 100%;
+}
+
+.cattablas {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: center;
+
+    & th {
+        color: #0000008f;
+        font-size: 75%;
+        padding: 2%;
+        font-family: "Lexend deca";
+    }
+
+    & td {
+        color: #3333338f;
+        font-size: 50%;
+        font-family: "Lexend deca";
+        padding: 1%;
+    }
+}
+
+.catalogorayban {
+    width: 250px;
+    height: 2400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 2%;
+}
+
+/*Maps y Each*/
+
+$rayban: (
+    1: '../img/Catalogo/rayban1.JPG',
+    2: '../img/Catalogo/rayban2.JPG',
+    3: '../img/Catalogo/rayban3.JPG',
+    4: '../img/Catalogo/rayban4.JPG',
+    5: '../img/Catalogo/rayban5.JPG'
+);
+
+%bg-size1 {
+    background-size: 100% 100%;
+}
+
+@mixin size-btn ($h, $w) {
+    height: $h;
+    width: $w;
+}
+
+@each $number, $img in $rayban {
+    .rayban#{$number} {
+        background-image: url($img);
+        @extend %bg-size1
+    }
+}
+
+
+
+/** Ubicación **/
+
+.map {
+    display: flex;
+    margin: 1%;
+    width: 80%;
+    height: 60%;
+}
+
+.textocontenido {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    .textocontenido-primary {
+        font-family: "Lexend deca";
+        color: #0000008f;
+        font-size: 85%;
+        margin: 2%;
+        
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/*Formulario*/
+
+.contenedorform {
+    
+
+    form {
+        background-color: white;
+        border-radius: 3px;
+        color: #999;
+        font-size: 15px;
+        padding: 20px;
+        margin: 30px;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        textarea {
+            border: 0;
+            outline: none;
+
+            width: 80%;
+        }
+
+        .field {
+            border: solid 1px #ccc;
+            padding: 10px;
+
+            &:focus {
+                border-color: #18a383;
+            }
+        }
+
+        .center-content {
+            text-align: center;
+
+            .btn {
+                border-radius: 3px;
+                display: flex;
+                text-decoration: none;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+                @include size-btn (50px, 55px);
+
+                &:hover {
+                    background-color: #14213d;
+                }
+            }
+
+            .btn-green:active {
+                background-color: #14213d;
+            }
+
+            .btn-green {
+                color: white;
+                background-color: #14213d;
+                padding: 10%;
+            }
+        }
+    }
+}
+
+.formu-title {
+    margin: 5%;
+}
+
+/* sobrenosotros*/
+
+
+
+.slideshow{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .slideshow-item{
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        opacity: 0;
+        animation: slideanim 31s infinite;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: zoom 31s infinite;
+        }
+        
+        .slideshow-item-text{
+            max-width: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            background-color: rgba(0,0,0,0.8);
+            color: #fff;
+            padding: 10rem 5rem;
+            font-family: 'Raleway', sans-serif;
+
+            .slideshow-item-text h5{
+                font-size: 3.5rem;
+                letter-spacing: 3px;
+            }
+            
+            .slideshow-item-text p{
+                font-weight: 300;
+                font-size: 1.6rem;
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+
+
+.slideshow-item:nth-child(1),
+.slideshow-item:nth-child(1) img{
+    animation-delay: 0;
+}
+.slideshow-item:nth-child(2),
+.slideshow-item:nth-child(2) img{
+    animation-delay: 10s;
+}
+
+.slideshow-item:nth-child(3),
+.slideshow-item:nth-child(3) img{
+    animation-delay: 20s;
+}
+
+
+@keyframes slideanim{
+    25%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+}
+
+@keyframes zoom{
+    100%{
+        transform: scale(1.3);
+    }
+}
+
+

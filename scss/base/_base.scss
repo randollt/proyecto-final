@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Lexend deca";
+    font-size: 1.2rem;
+    min-height: 100%;
+
+    .grid-container>* {
+        text-align: center;
+        margin: 0%;
+        padding: 5px;
+    }
+
+    
+}
+
+/*text-titleall*/
+
+.text-titleall {
+    display: flex;
+    justify-content: center;
+    color:var($colortextgral);
+    font-family: "Lexend deca";
+}
+
+
+
+
+/***********grid mobile***********/
+.grid-container {
+    display: grid;
+
+    grid-template: 
+    "header"50px 
+    "navbar"50px 
+    "main"auto 
+    "sidebar"auto 
+    "footer"150px;
+}
+
