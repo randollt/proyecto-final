@@ -296,7 +296,7 @@ body {
       object-fit: cover;
       animation: zoom 31s infinite; }
     .slideshow .slideshow-item .slideshow-item-text {
-      max-width: 50%;
+      
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
